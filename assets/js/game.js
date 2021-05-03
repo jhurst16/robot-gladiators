@@ -30,10 +30,10 @@ var fightOrSkip = function () {
       )
       // subtract money from playerMoney for skipping
       playerInfo.playerMoney = Math.max(0, playerInfo.money - 10)
-      shop()
       return true
     }
   }
+  return false;
 }
 
 // fight function (now with parameter for enemy's name)
@@ -134,6 +134,7 @@ var startGame = function () {
       // reset enemyHealth before starting new fight
       pickedEnemyObj.health = randomNumber(40, 60)
 
+      console.log(pickedEnemyObj);
       // pass the pickedenemy.name variable's value into the fight function, where it will assume the value of the enemy.name parameter
       fight(pickedEnemyObj)
 
